@@ -1,0 +1,19 @@
+// Header.module.scss
+.headerWrapper {
+    background-image: url('../../assets/images/headerImg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Sørger for, at børnene er stakket i kolonnen */
+  }
+  
+  h1 {
+    color: white;
+    font-size: 12vh;
+    font-weight: 100;
+  }
+  
