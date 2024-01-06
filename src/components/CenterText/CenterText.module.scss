@@ -1,17 +1,89 @@
-.sectionWrapper {
+@mixin Center{
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
- 
+    // min-height: 100%;
+    padding-bottom: 3rem;
+}
+@mixin Butt{
+    padding: 1rem;
+    background-color: white;
+    border: solid 1px black;
+    margin-top: 3rem;
+    font-family: 'Gilda Display', serif;
+    font-weight: 600;
+    letter-spacing: 1px
+}
+@mixin Article{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 32vh;
+}
+  
+  .sectionWrapperNB {
+    @include Center;
+    background-size: cover; /* Juster efter behov */
+    background-position: center; /* Juster efter behov */
+    background-repeat: no-repeat;
+  }
+
+.sectionWrapper {
+    @include Center;
+    background-color: rgba(12, 12, 12, 0.628);
+  }
+
+  .sectionWrapperP {
+    @include Center;
+    @include Article;
+    background-image: url('../../assets/images/Frame 4.png');
+
+    h2{
+        margin-top: 3rem;
+    }
+    button{
+        @include Butt;
+        background-color: rgb(28, 28, 28);
+        color: white;
+        border: white solid 1px
+    }
+  }
+  .sectionWrapperP2{
+    @include Center;
+    @include Article;
+    background-image: url('../../assets/images/Frame 4-1.png');
+
+    h2{
+        margin-top: 3rem;
+    }
+    button{
+        @include Butt;
+        background-color: rgb(28, 28, 28);
+        color: white;
+        border: white solid 1px
+    }
   }
 
   .headerInfo{
+    text-align: center;
     color:white;
     width: 50%;
+    
     h2{
         font-weight: 100; 
+    }
+}
+
+.newStyle{
+    text-align: center;
+    color:black;
+    width: 70%;
+    margin-top: 3rem;
+    h2{
+        font-weight: 100; 
+        font-size: 2rem;
+    }
+    button{
+        @include Butt
     }
  
 }
