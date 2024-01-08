@@ -36,7 +36,7 @@ export const CenterTextSection3 = () => {
     return <section className={styles.sectionWrapperP2} >
         <div className={styles.headerInfo}>
         <h2>ONE 2 ONE</h2>
-        <p>unsectetur adipisicing elit. Labore in explicabo error praesentium a aperiam dicta ipsum sit itaque delectus id architecto, quod, quisquam iusto atque at? Fuga, enim sed.</p>
+        <p>us voluptate maiores est quis sectetur adipisicing elit. Labore in explicabo error praesentium a aperiam dicta ipsum sit itaque delectus id architecto, quod, quisquam iusto atque at? Fuga, enim sed.</p>
         <button>LÆS MERE</button>
         </div>
         </section>
