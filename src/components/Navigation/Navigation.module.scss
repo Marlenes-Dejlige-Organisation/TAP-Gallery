@@ -1,5 +1,5 @@
 .navWrapper {
-  background-color: #333;
+  background-color: #ffffff;
   padding: 15px;
   ul {
     display: flex;
@@ -11,9 +11,9 @@
         margin-right: 0; /* Fjern margen fra det sidste element */
       }
       .NavLink {
-        color: #fff !important; /* Hvid tekstfarve */
+        color: #ea1fed !important; /* Hvid tekstfarve */
         text-decoration: none; /* Fjern understregning */
-        font-weight: 100;
+        font-weight: 600;
         font-size: 16px; /* Juster skriftstørrelsen efter behov */
       
         &:hover {
