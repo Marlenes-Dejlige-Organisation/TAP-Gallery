@@ -2,17 +2,15 @@
   background-color: #ffffff;
   padding: 0;
   .logo{
-margin-bottom: -3rem;
+   margin-bottom: -3rem;
    width: 3%;
    height: 3%;
    padding: 1rem;
-   
   }
   img{
+    position: relative;
     border-radius: 50%;
     z-index: 0;
-
-
   }
 
   ul {

@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import * as contentful from 'contentful';
 import styles from './Description.module.scss';
+import client from '../ContentfulClient/Client';
 
-const client = contentful.createClient({
-    space: 'd6annblvb5fr',
-    environment: 'master',
-    accessToken: 'Kd4rwoRDmJcJkY3uSJE2PTu29mH1F-ocq4JR1Vfo0dU'
-});
+
 
 export const Description = () => {
     const [description, setDescription] = useState("");
     const [additionalText, setAdditionalText] = useState("");
 
     useEffect(() => {
-        client.getEntry('5AQvpE7kD17JrJAdfXWRgW')
+        const entryId = import.meta.env.VITE_CONTENTFUL_ENTRY_ID; 
+
+        client.getEntry(entryId)
             .then((entry) => {
                 setDescription(entry.fields.description.content[0].content[0].value);
                 setAdditionalText(entry.fields.description.content[1].content[0].value);

@@ -3,19 +3,16 @@ import { CenterTextSection2, CenterTextSection3 } from '../CenterText/CenterText
 import { Gallery } from '../Gallery/Gallery';
 import { Description } from '../Description/Description';
 import React, { useState, useEffect } from 'react';
-import * as contentful from 'contentful';
+import client from '../ContentfulClient/Client';
 
-const client = contentful.createClient({
-    space: 'd6annblvb5fr',
-    environment: 'master',
-    accessToken: 'Kd4rwoRDmJcJkY3uSJE2PTu29mH1F-ocq4JR1Vfo0dU'
-});
 
 export const Main = () => {
     const [galleryImages, setGalleryImages] = useState([]);
 
     useEffect(() => {
-        client.getEntry('5AQvpE7kD17JrJAdfXWRgW')
+        const entryId = import.meta.env.VITE_CONTENTFUL_ENTRY_ID; 
+
+        client.getEntry(entryId)
             .then((entry) => {
                 const images = entry.fields.gallery.map(image => image.fields.file.url);
                 setGalleryImages(images);

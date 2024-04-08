@@ -1,21 +1,16 @@
 import styles from './Navigation.module.scss';
 import { NavLink } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
-import * as contentful from 'contentful';
-
-const client = contentful.createClient({
-    space: 'd6annblvb5fr',
-    environment: 'master', 
-    accessToken: 'Kd4rwoRDmJcJkY3uSJE2PTu29mH1F-ocq4JR1Vfo0dU'
-  })
+import client from '../ContentfulClient/Client';
 
 export const Navigation = () => {
   const [logoUrl, setLogoUrl] = useState('');
 
   useEffect(() => {
-    client.getEntry('5AQvpE7kD17JrJAdfXWRgW') // Erstatt 'your_entry_id' med det faktiske ID for dit entry
+    const entryId = import.meta.env.VITE_CONTENTFUL_ENTRY_ID; 
+
+    client.getEntry(entryId)
         .then((entry) => {
-            console.log("Entry data:", entry);
             setLogoUrl(entry.fields.logo.fields.file.url);
         })
         .catch((error) => {
@@ -28,6 +23,7 @@ export const Navigation = () => {
       
       <div className={styles.logo}>
             <img src={logoUrl} alt="Logo" />
+   
         </div>
       <ul>
         

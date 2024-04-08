@@ -1,12 +1,6 @@
+import client from '../ContentfulClient/Client';
 import styles from './CenterText.module.scss'
 import React, { useState, useEffect } from 'react';
-import * as contentful from 'contentful';
-
-const client = contentful.createClient({
-    space: 'd6annblvb5fr',
-    environment: 'master', // defaults to 'master' if not set
-    accessToken: 'Kd4rwoRDmJcJkY3uSJE2PTu29mH1F-ocq4JR1Vfo0dU'
-  })
 
   export const CenterTextSection2 = () => {
     const [bannerUrl, setBannerUrl] = useState('');
@@ -14,8 +8,11 @@ const client = contentful.createClient({
     const [descriptionOfArtist, setDescriptionOfArtist] = useState([]);
 
     useEffect(() => {
-        client.getEntry('5WYDHCyhlUHtAMQ3c6kMaz')
+        const entryId = import.meta.env.VITE_CONTENTFUL_ENTRY_ID2; 
+
+        client.getEntry(entryId)
             .then((entry) => {
+                console.log("Entry data:", entry);
                 setArtistName(entry.fields.artistName);
                 setBannerUrl(entry.fields.artwork[0].fields.file.url);
                 setDescriptionOfArtist(entry.fields.descriptionOfArtist.content);
@@ -57,7 +54,7 @@ export const CenterTextSection3 = () => {
     }, []);
 
     return (
-        <section className={styles.sectionWrapperP2} style={{ backgroundImage: `url(${bannerUrl})` }}>
+        <section className={styles.sectionWrapperP} style={{ backgroundImage: `url(${bannerUrl})` }}>
             <div className={styles.headerInfo}>
                 <h2>{artistName}</h2>
                 {descriptionOfArtist.map((paragraph, index) => (

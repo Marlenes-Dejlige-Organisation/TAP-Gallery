@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import * as contentful from 'contentful';
 import styles from './Header.module.scss';
+import client from '../ContentfulClient/Client';
 
-const client = contentful.createClient({
-    space: 'd6annblvb5fr',
-    environment: 'master',
-    accessToken: 'Kd4rwoRDmJcJkY3uSJE2PTu29mH1F-ocq4JR1Vfo0dU'
-});
 
 export function Header() {
     const [galleryName, setGalleryName] = useState("");
@@ -14,7 +9,9 @@ export function Header() {
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
     useEffect(() => {
-        client.getEntry('5AQvpE7kD17JrJAdfXWRgW')
+        const entryId = import.meta.env.VITE_CONTENTFUL_ENTRY_ID; 
+
+        client.getEntry(entryId)
             .then((entry) => {
                 // console.log("Entry data:", entry);
                 setGalleryName(entry.fields.nameOfGallery);
