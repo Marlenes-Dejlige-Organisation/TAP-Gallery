@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import * as contentful from 'contentful';
-import { CenterTextHeader } from '../CenterText/CenterText';
 import styles from './Header.module.scss';
 
 const client = contentful.createClient({
@@ -10,29 +9,35 @@ const client = contentful.createClient({
 });
 
 export function Header() {
-    const [artworks, setArtworks] = useState([]);
     const [galleryName, setGalleryName] = useState("");
-    const [bannerUrl, setBannerUrl] = useState("");
+    const [bannerUrls, setBannerUrls] = useState([]);
+    const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
     useEffect(() => {
         client.getEntry('5AQvpE7kD17JrJAdfXWRgW')
             .then((entry) => {
-                console.log("Entry data:", entry);
-                setArtworks(entry.fields.artworks);
+                // console.log("Entry data:", entry);
                 setGalleryName(entry.fields.nameOfGallery);
-                setBannerUrl(entry.fields.banner[0].fields.file.url);
+                setBannerUrls(entry.fields.banner.map(banner => banner.fields.file.url));
             })
             .catch((error) => {
                 console.error("Error fetching data:", error);
             });
     }, []);
 
-    const headerStyle = {
-        backgroundImage: `url(${bannerUrl})`
-    };
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentSlideIndex(prevIndex => (prevIndex + 1) % bannerUrls.length);
+        }, 5000); // Skift hvert 5. sekund
+
+        return () => clearInterval(interval); // Ryd op når komponenten fjernes
+    }, [bannerUrls]);
 
     return (
-        <div className={styles.headerWrapper} style={headerStyle}>
+        <div className={styles.headerWrapper} style={{
+            backgroundImage: `url(${bannerUrls[currentSlideIndex]})`,
+            transition: 'background-image 3s ease-in-out' // Tilføj transition
+        }}>
             <h1>{galleryName}</h1>
         </div>
     );

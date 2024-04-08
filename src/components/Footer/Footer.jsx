@@ -34,13 +34,10 @@ export const Footer = () => {
       </div>
 
       <div className={styles.findUsSection}>
-        <h4>FIND US</h4>
+        <h4>WHO DID THIS?</h4>
         <div className={styles.contactInfo}>
-          <p>WhatsApp <br />+45 23 43 43 43</p>
+          <p>Marlene</p>
          
-          <p>Telefonnummer <br />+45 58 84 84 84</p>
-         
-          <p>Adresse <br />Supergatan 56 <br /> Oslo, Norway</p>
      
         </div>
       </div>

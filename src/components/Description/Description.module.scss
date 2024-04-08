@@ -1,0 +1,21 @@
+@mixin Center{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+.sectionWrapper {
+    @include Center;
+    background-color: rgb(247, 245, 251);
+  }
+
+  .headerInfo{
+    text-align: center;
+    color:black;
+    width: 50%;
+    
+    h2{
+        font-weight: 100; 
+    }
+}
+
