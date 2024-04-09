@@ -13,7 +13,6 @@ export function Header() {
 
         client.getEntry(entryId)
             .then((entry) => {
-                // console.log("Entry data:", entry);
                 setGalleryName(entry.fields.nameOfGallery);
                 setBannerUrls(entry.fields.banner.map(banner => banner.fields.file.url));
             })

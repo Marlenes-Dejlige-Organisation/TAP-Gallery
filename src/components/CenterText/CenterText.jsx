@@ -12,7 +12,7 @@ import React, { useState, useEffect } from 'react';
 
         client.getEntry(entryId)
             .then((entry) => {
-                console.log("Entry data:", entry);
+
                 setArtistName(entry.fields.artistName);
                 setBannerUrl(entry.fields.artwork[0].fields.file.url);
                 setDescriptionOfArtist(entry.fields.descriptionOfArtist.content);
@@ -43,7 +43,6 @@ export const CenterTextSection3 = () => {
     useEffect(() => {
         client.getEntry('30LybItCNUYODN9mlMv7Ng')
             .then((entry) => {
-                console.log("Entry data:", entry);
                 setArtistName(entry.fields.artistName);
                 setBannerUrl(entry.fields.artwork[0].fields.file.url);
                 setDescriptionOfArtist(entry.fields.descriptionOfArtist.content);
