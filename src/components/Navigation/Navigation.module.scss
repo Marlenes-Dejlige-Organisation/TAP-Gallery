@@ -1,7 +1,20 @@
 .navWrapper {
-  background-color: #333;
-  padding: 15px;
+  background-color: #ffffff;
+  padding: 0;
+  .logo{
+   margin-bottom: -3rem;
+   width: 3%;
+   height: 3%;
+   padding: 1rem;
+  }
+  img{
+    position: relative;
+    border-radius: 50%;
+    z-index: 0;
+  }
+
   ul {
+    margin-right: 1rem;
     display: flex;
     justify-content: flex-end;
     list-style-type: none; /* Fjern prikker */
@@ -11,10 +24,10 @@
         margin-right: 0; /* Fjern margen fra det sidste element */
       }
       .NavLink {
-        color: #fff !important; /* Hvid tekstfarve */
+        color: black;
         text-decoration: none; /* Fjern understregning */
-        font-weight: 100;
-        font-size: 16px; /* Juster skriftstørrelsen efter behov */
+        font-weight: 300;
+        font-size: 1rem; /* Juster skriftstørrelsen efter behov */
       
         &:hover {
           text-decoration: underline; /* Vis understregning ved hover */

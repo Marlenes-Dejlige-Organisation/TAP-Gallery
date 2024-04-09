@@ -1,19 +1,17 @@
-@mixin Center{
-    display: flex;
-    justify-content: center;
-    // min-height: 100%;
-    padding-bottom: 3rem;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+  font-family: "Poppins", sans-serif;
 }
+
 @mixin Butt{
+  font-family: "Poppins", sans-serif;
     padding: 1rem;
-    background-color: white;
-    border: solid 1px black;
-    margin-top: 3rem;
-    font-family: 'Gilda Display', serif;
-    font-weight: 100;
+    background-color: #2a2a2a;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     letter-spacing: 1px;
     &:hover{
-        background-color: #121212;
+        background-color: rgb(249, 63, 7);
         cursor: pointer;
         color: white;
         }
@@ -24,71 +22,37 @@
     background-repeat: no-repeat;
     min-height: 32vh;
 }
-  
-  .sectionWrapperNB {
-    @include Center;
-    background-size: cover; /* Juster efter behov */
-    background-position: center; /* Juster efter behov */
-    background-repeat: no-repeat;
-  }
-
 .sectionWrapper {
-    @include Center;
-    background-color: rgba(12, 12, 12, 0.628);
+    background-color: rgba(12, 12, 12, 0.216);
   }
 
   .sectionWrapperP {
-    @include Center;
     @include Article;
-    background-image: url('../../assets/images/Frame 4.png');
-
     h2{
-        margin-top: 3rem;
+        margin-top: 1rem;
+        color:rgb(249, 63, 7);
+        font-weight: 400;
+    }
+    p{
+      font-weight: 300;
     }
     button{
         @include Butt;
-        background-color: rgb(28, 28, 28);
+        font-weight: 400;
+        font-size: 0.5rem;
+        border-radius: 50%;
+        background-color:  rgb(249, 63, 7);
         color: white;
-        border: white solid 1px
+        border: none;
     }
   }
-  .sectionWrapperP2{
-    @include Center;
-    @include Article;
-    background-image: url('../../assets/images/Frame 4-1.png');
-
-    h2{
-        margin-top: 3rem;
-    }
-    button{
-        @include Butt;
-        background-color: rgb(28, 28, 28);
-        color: white;
-        border: white solid 1px
-    }
-  }
-
+  
   .headerInfo{
-    text-align: center;
     color:white;
-    width: 50%;
-    
-    h2{
-        font-weight: 100; 
-    }
+    width: 35%;
+    height: 80%;
+    background-color: #000000dc;
+    padding: 2rem;
+
 }
 
-.newStyle{
-    text-align: center;
-    color:black;
-    width: 70%;
-    margin-top: 3rem;
-    h2{
-        font-weight: 100; 
-        font-size: 2rem;
-    }
-    button{
-        @include Butt
-    }
- 
-}
