@@ -22,7 +22,7 @@ export const Description = () => {
     }, []);
 
     return (
-        <section className={styles.sectionWrapper}>
+        <section id='om' className={styles.sectionWrapper}>
             <div className={styles.headerInfo}>
                 <h2>{description}</h2>
                 <h3>{additionalText}</h3>

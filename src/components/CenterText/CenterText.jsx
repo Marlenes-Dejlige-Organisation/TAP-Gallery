@@ -29,7 +29,7 @@ import React, { useState, useEffect } from 'react';
                 {descriptionOfArtist.map((paragraph, index) => (
                     <p key={index}>{paragraph.content[0].value}</p>
                 ))}
-                <button>Læs mere</button>
+                <button></button>
             </div>
         </section>
     );
@@ -60,7 +60,7 @@ export const CenterTextSection3 = () => {
                 {descriptionOfArtist.map((paragraph, index) => (
                     <p key={index}>{paragraph.content[0].value}</p>
                 ))}
-                <button>Læs mere</button>
+                <button></button>
             </div>
         </section>
     );

@@ -25,7 +25,7 @@ export function Header() {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentSlideIndex(prevIndex => (prevIndex + 1) % bannerUrls.length);
-        }, 5000); // Skift hvert 5. sekund
+        }, 8000); // Skift hvert 5. sekund
 
         return () => clearInterval(interval); // Ryd op når komponenten fjernes
     }, [bannerUrls]);

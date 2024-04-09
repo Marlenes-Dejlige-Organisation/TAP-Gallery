@@ -3,7 +3,7 @@ import styles from './Footer.module.scss'
 
 
 export const Footer = () => {
-    return <footer className={styles.footerWrapper} >
+    return <footer className={styles.footerWrapper} id='newsletter'>
               <div className={styles.subscribeSection}>
         <h3>SUBSCRIBE TO NEWSLETTER</h3>
         <div className={styles.inputFields}>
@@ -23,6 +23,14 @@ export const Footer = () => {
           <li>Newsletter</li>
           <li>Kontakt</li>
         </ul>
+
+      </div>
+
+      <div className={styles.findUsSection}>
+        <h4>WHO DID THIS?</h4>
+        <div className={styles.contactInfo}>
+          <p>Marlene</p>
+        </div>
         <div className={styles.followUs}>
           <h4>FOLLOW US</h4>
           <div className={styles.socialLinks}>
@@ -32,14 +40,6 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-
-      <div className={styles.findUsSection}>
-        <h4>WHO DID THIS?</h4>
-        <div className={styles.contactInfo}>
-          <p>Marlene</p>
-         
-     
-        </div>
-      </div>
+      
         </footer>
 }
