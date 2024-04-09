@@ -24,7 +24,7 @@ export const Main = () => {
 
     return (
         <main className={styles.mainWrapper}>
-            <Description />
+            <Description/>
             <h4>Recent Exhibitions</h4>
             <div className={styles.articles}>
                 

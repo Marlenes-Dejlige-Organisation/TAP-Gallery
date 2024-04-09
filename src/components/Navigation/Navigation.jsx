@@ -26,11 +26,7 @@ export const Navigation = () => {
    
         </div>
       <ul>
-        
-        <li><NavLink to="/"className={styles.NavLink}>HJEM</NavLink></li>
-        <li><NavLink to="/about"className={styles.NavLink}>OM</NavLink></li>
-        <li><NavLink to="/contact"className={styles.NavLink}>KONTAKT</NavLink></li>
-        <li><NavLink to="/products"className={styles.NavLink}>KONCEPTER</NavLink></li>
+        <li><a href='#newsletter' className={styles.NavLink}>CONTACT</a></li>
       </ul>
     </nav>
   );

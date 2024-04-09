@@ -14,15 +14,7 @@ export const Footer = () => {
       </div>
 <div></div>
       <div className={styles.quickLinksSection}>
-        <h4>QUICK LINKS</h4>
-        <ul>
-          <li>Hjem</li>
-          <li>Om os</li>
-          <li>Prisliste</li>
-          <li>Booking</li>
-          <li>Newsletter</li>
-          <li>Kontakt</li>
-        </ul>
+
 
       </div>
 
@@ -31,14 +23,14 @@ export const Footer = () => {
         <div className={styles.contactInfo}>
           <p>Marlene</p>
         </div>
-        <div className={styles.followUs}>
-          <h4>FOLLOW US</h4>
+
+        <div className={styles.return}>
+          <h3>Return to top</h3>
           <div className={styles.socialLinks}>
             <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
+
           </div>
-        </div>
+          </div>
       </div>
       
         </footer>
